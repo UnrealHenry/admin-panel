@@ -1,0 +1,565 @@
+/* App-specific styles for Jack Elder aesthetic - Admin Panel */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.01) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(255,255,255,0.01) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Admin dashboard specific styles */
+.dashboard-header {
+  @apply glass-minimal border-b border-white/10 p-8;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.dashboard-title {
+  @apply text-white font-bold mb-2;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.dashboard-subtitle {
+  @apply text-white/70;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.4;
+}
+
+/* Metrics grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.metric-card {
+  @apply stat-card;
+  text-align: center;
+}
+
+.metric-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Charts and analytics */
+.analytics-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.chart-card {
+  @apply dashboard-card;
+  min-height: 400px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.chart-period-btn {
+  @apply filter-button;
+  padding: 0.5rem 1rem;
+}
+
+/* Data table styles */
+.data-table-container {
+  @apply dashboard-card overflow-hidden;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  @apply table-header;
+}
+
+.data-table tbody tr {
+  @apply table-row;
+}
+
+.data-table th,
+.data-table td {
+  @apply table-cell;
+}
+
+.data-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.data-table td {
+  padding: 1rem;
+}
+
+/* User profile styles */
+.user-profile-card {
+  @apply stat-card flex items-center gap-4;
+}
+
+.user-avatar {
+  width: 4rem;
+  height: 4rem;
+  @apply rounded-full bg-white/10 flex items-center justify-center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.user-info h3 {
+  @apply text-white font-semibold mb-1;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.user-info p {
+  @apply text-white/70;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Status indicators */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  @apply bg-green-400;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.status-dot.offline {
+  @apply bg-gray-400;
+}
+
+.status-dot.busy {
+  @apply bg-red-400;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* Activity feed */
+.activity-feed {
+  @apply dashboard-card;
+}
+
+.activity-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  @apply rounded-full bg-white/10 flex items-center justify-center flex-shrink-0;
+}
+
+.activity-content h4 {
+  @apply text-white font-medium mb-1;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.activity-content p {
+  @apply text-white/70;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
+.activity-time {
+  @apply text-white/50 font-mono;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  margin-left: auto;
+}
+
+/* Quick actions */
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.quick-action-btn {
+  @apply btn-secondary;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quick-action-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Notification styles */
+.notification-panel {
+  @apply dashboard-card max-h-96 overflow-y-auto scrollbar-thin;
+}
+
+.notification-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.notification-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  @apply bg-blue-400 rounded-full flex-shrink-0 mt-2;
+}
+
+.notification-indicator.read {
+  @apply bg-white/20;
+}
+
+.notification-content h5 {
+  @apply text-white font-medium mb-1;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.notification-content p {
+  @apply text-white/70;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
+/* Settings panel */
+.settings-panel {
+  @apply dashboard-card;
+}
+
+.settings-section {
+  margin-bottom: 2rem;
+}
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.settings-section h3 {
+  @apply text-white font-semibold mb-4;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-label {
+  @apply text-white;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.settings-description {
+  @apply text-white/70 mt-1;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
+/* Toggle switch */
+.toggle-switch {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  @apply bg-white/20 rounded-full cursor-pointer transition-colors duration-300;
+}
+
+.toggle-switch.active {
+  @apply bg-white;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  @apply bg-white rounded-full transition-transform duration-300;
+}
+
+.toggle-switch.active .toggle-slider {
+  @apply bg-black;
+  transform: translateX(1.5rem);
+}
+
+/* Loading states for admin */
+.admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 2rem;
+}
+
+.loading-spinner-large {
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text-large {
+  @apply text-white/70;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Responsive admin layout */
+@media (max-width: 1024px) {
+  .analytics-section {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-layout {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dashboard-header {
+    padding: 1rem;
+  }
+
+  .admin-content {
+    padding: 1rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quick-actions {
+    justify-content: center;
+  }
+
+  .chart-controls {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .data-table-container {
+    overflow-x: auto;
+  }
+
+  .user-profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .activity-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .activity-time {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .settings-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* Smooth transitions for admin views */
+.admin-view-transition {
+  animation: fade-in-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-black/80 z-40;
+  backdrop-filter: blur(10px);
+  display: none;
+}
+
+.mobile-menu-overlay.open {
+  display: block;
+}
+
+/* Error states */
+.error-state {
+  @apply text-center py-16;
+}
+
+.error-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  color: rgba(239, 68, 68, 0.7);
+}
+
+.error-title {
+  @apply text-white font-semibold mb-2;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+.error-description {
+  @apply text-white/70 mb-4;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+/* Success states */
+.success-state {
+  @apply text-center py-16;
+}
+
+.success-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  color: rgba(34, 197, 94, 0.7);
+}
+
+/* Admin-specific animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stagger animations for dashboard elements */
+.dashboard-element {
+  animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dashboard-element:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-element:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-element:nth-child(3) { animation-delay: 0.3s; }
+.dashboard-element:nth-child(4) { animation-delay: 0.4s; }
+.dashboard-element:nth-child(5) { animation-delay: 0.5s; }
+.dashboard-element:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

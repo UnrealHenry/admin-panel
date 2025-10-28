@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ORD-001",
+    "customerName": "John Doe",
+    "customerEmail": "john.doe@example.com",
+    "product": "Premium Widget",
+    "amount": 299.99,
+    "status": "Completed",
+    "orderDate": "2024-01-15T10:30:00Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "ORD-002",
+    "customerName": "Jane Smith",
+    "customerEmail": "jane.smith@example.com",
+    "product": "Standard Widget",
+    "amount": 149.99,
+    "status": "Processing",
+    "orderDate": "2024-01-14T15:45:00Z",
+    "paymentMethod": "PayPal"
+  },
+  {
+    "id": "ORD-003",
+    "customerName": "Mike Johnson",
+    "customerEmail": "mike.johnson@example.com",
+    "product": "Basic Widget",
+    "amount": 79.99,
+    "status": "Shipped",
+    "orderDate": "2024-01-13T12:20:00Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "ORD-004",
+    "customerName": "Sarah Wilson",
+    "customerEmail": "sarah.wilson@example.com",
+    "product": "Premium Widget",
+    "amount": 299.99,
+    "status": "Completed",
+    "orderDate": "2024-01-12T09:15:00Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "ORD-005",
+    "customerName": "David Brown",
+    "customerEmail": "david.brown@example.com",
+    "product": "Standard Widget",
+    "amount": 149.99,
+    "status": "Cancelled",
+    "orderDate": "2024-01-11T16:30:00Z",
+    "paymentMethod": "PayPal"
+  },
+  {
+    "id": "ORD-006",
+    "customerName": "Emily Davis",
+    "customerEmail": "emily.davis@example.com",
+    "product": "Basic Widget",
+    "amount": 79.99,
+    "status": "Completed",
+    "orderDate": "2024-01-10T11:00:00Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "ORD-007",
+    "customerName": "Robert Taylor",
+    "customerEmail": "robert.taylor@example.com",
+    "product": "Premium Widget",
+    "amount": 299.99,
+    "status": "Processing",
+    "orderDate": "2024-01-09T08:45:00Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "ORD-008",
+    "customerName": "Lisa Anderson",
+    "customerEmail": "lisa.anderson@example.com",
+    "product": "Standard Widget",
+    "amount": 149.99,
+    "status": "Shipped",
+    "orderDate": "2024-01-08T14:20:00Z",
+    "paymentMethod": "PayPal"
+  },
+  {
+    "id": "ORD-009",
+    "customerName": "Alex Thompson",
+    "customerEmail": "alex.thompson@example.com",
+    "product": "Basic Widget",
+    "amount": 79.99,
+    "status": "Completed",
+    "orderDate": "2024-01-07T13:10:00Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "ORD-010",
+    "customerName": "Maria Garcia",
+    "customerEmail": "maria.garcia@example.com",
+    "product": "Premium Widget",
+    "amount": 299.99,
+    "status": "Processing",
+    "orderDate": "2024-01-06T10:25:00Z",
+    "paymentMethod": "PayPal"
+  }
+] 
